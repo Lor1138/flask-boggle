@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div id="game">
+        <div class="row row-cols-5">
+            {% for row in board %}
+            <div class="col">
+                {% for piece in row %}
+                    <div class="piece">
+                        {{piece}}
+                    </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+    </div>
+ </div>
+     
+
+    <div class="">
+        <form action="/find_word" class="" method="POST">
+            <input type="text" name="guess" id="guess-user">
+            <button type="submit" class="btn btn-primary"> Submit Guess </button>
+        </form>
+    </div>
+</div>
+ 
+{% endblock %}
